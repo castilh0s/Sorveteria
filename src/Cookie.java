@@ -1,0 +1,7 @@
+/**
+ * Cookie
+ */
+public class Cookie {
+
+  
+}

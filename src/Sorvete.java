@@ -1,0 +1,7 @@
+/**
+ * Sorvete
+ */
+public class Sorvete {
+
+  
+}

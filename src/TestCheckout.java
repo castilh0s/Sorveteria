@@ -4,7 +4,6 @@
 // Baseado no trabalho de Suzanne Balik
 
 public class TestCheckout {
-
   public static void main(String[] args) {
 
     Checkout checkout = new Checkout();
