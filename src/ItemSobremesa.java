@@ -23,7 +23,7 @@ public abstract class ItemSobremesa {
     if (nome.length() <= Sorveteria.TAMANHO_MAX_DO_NOME_DO_ITEM)
       this.nome = nome;
     else
-      this.nome = nome.substring(0,Sorveteria.TAMANHO_MAX_DO_NOME_DO_ITEM);
+      this.nome = nome.substring(0, Sorveteria.TAMANHO_MAX_DO_NOME_DO_ITEM);
   }
 /**
  * Retorna o nome do ItemSobremesa

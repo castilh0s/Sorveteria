@@ -2,12 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Mantém uma lista de referências de ItemSobremesa. Não há limites quanto ao
+ * número de ItemSobremesa na lista
  *
- */
-
-/**
- * Mantém uma lista de referências de ItemSobremesa.
- * Não há limites quanto ao número de ItemSobremesa na lista
  * @author Rodrigo Gregori
  *
  */
@@ -30,6 +27,7 @@ public class Checkout {
 
 	/**
 	 * Insere um ItemSobremesa ao final da lista de itens
+	 *
 	 * @param item Um item de sobremesa
 	 */
 	public void insereItem(ItemSobremesa item) {
@@ -38,6 +36,7 @@ public class Checkout {
 
 	/**
 	 * Retorna o número de itens na lista
+	 *
 	 * @return O número de itens
 	 */
 	public int numeroDeItens() {
@@ -46,29 +45,44 @@ public class Checkout {
 
 	/**
 	 * Retorna o custo total dos itens, em centavos (sem impostos)
+	 *
 	 * @return O custo total dos itens
 	 */
 	public int custoTotal() {
-		// TODO construir o código
-		return 0;
+		int custoTotal = 0;
+
+		for (ItemSobremesa item : itens) {
+			custoTotal += item.getCusto();
+		}
+		return custoTotal;
 	}
 
 	/**
 	 * Retorna o total dos impostos dos itens, em centavos
+	 *
 	 * @return O total dos impostos
 	 */
 	public int impostoTotal() {
-		// TODO construir o código
-		return 0;
+		double imposto = Sorveteria.IMPOSTO;
+		int custoTotal = 0;
+
+		for (ItemSobremesa item : itens) {
+			custoTotal += Math.round((item.getCusto() * imposto) / 100);
+		}
+
+		return custoTotal;
 	}
 
 	/**
 	 * Retorna uma string representando o cupom fiscal, da lista de itens atual
-	 * @return uma string representando o cupom fiscal da lista de ItemSobremesa com o nome da loja, os itens comprados e o custo total, por exemplo:
-	 * <pre>
+	 *
+	 * @return uma string representando o cupom fiscal da lista de ItemSobremesa com
+	 *         o nome da loja, os itens comprados e o custo total, por exemplo:
+	 *
+	 *         <pre>
 	 *       Sorveteria M & M
-     *     	 ----------------
-     *
+	 *     	 ----------------
+	*
 	 * Sorvete de Morango          1,45
 	 * Sundae de Caramelo com
 	 * Sorvete de Baunilha         1,55
@@ -82,7 +96,7 @@ public class Checkout {
 	 * Delicado                    3,27
 	 * Imposto                     0,77
 	 * Custo Total                12,69
-	 * </pre>
+	 *         </pre>
 	 */
 	@Override
 	public String toString() {
@@ -98,7 +112,8 @@ public class Checkout {
 			saida += item.toString() + "\n";
 		}
 		saida += String.format("%-25s %6s\n", "Imposto", Sorveteria.centavos2ReaisECentavos(impostoTotal()));
-		saida += String.format("%-25s %6s", "Custo Total", Sorveteria.centavos2ReaisECentavos(custoTotal()+impostoTotal()));
+		saida += String.format("%-25s %6s", "Custo Total",
+				Sorveteria.centavos2ReaisECentavos(custoTotal() + impostoTotal()));
 		return saida;
 	}
 
