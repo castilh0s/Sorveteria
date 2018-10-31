@@ -8,7 +8,6 @@
  * @author Rodrigo Gregori
  */
 public abstract class ItemSobremesa {
-
   protected String nome;
 
 /**

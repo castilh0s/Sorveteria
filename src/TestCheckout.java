@@ -10,8 +10,8 @@ public class TestCheckout {
     Checkout checkout = new Checkout();
 
     checkout.insereItem(new Doce("Caramelo de manteiga de amendoim", 0.35, 399));
-    checkout.insereItem(new Sorvete("Sorvete de Baunilha",105));
-    checkout.insereItem(new Sundae("Sorvete de flocos",145, "Calda de caramelo", 50));
+    checkout.insereItem(new Sorvete("Sorvete de Baunilha", 105));
+    checkout.insereItem(new Sundae("Sorvete de flocos", 145, "Calda de caramelo", 50));
     checkout.insereItem(new Cookie("Cookies com passas e aveia", 4, 399));
 
     System.out.println("\nNúmero de ítens: " + checkout.numeroDeItens() + "\n");
